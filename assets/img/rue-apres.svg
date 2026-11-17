@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+<rect width="1600" height="900" fill="#EAF3FC"/><rect width="1600" height="230" fill="#DCE9F7"/>
+<g fill="#fff" stroke="#123B70" stroke-width="3"><rect x="40" y="40" width="300" height="190"/><rect x="380" y="70" width="260" height="160"/><rect x="960" y="40" width="300" height="190"/><rect x="1300" y="80" width="260" height="150"/></g>
+<rect y="230" width="1600" height="90" fill="#F4F6F8"/>
+<g fill="#5FAF7A" stroke="#3E8A57" stroke-width="3"><circle cx="120" cy="275" r="34"/><circle cx="420" cy="275" r="34"/><circle cx="720" cy="275" r="34"/><circle cx="1020" cy="275" r="34"/><circle cx="1320" cy="275" r="34"/></g>
+<rect y="320" width="1600" height="60" fill="#9CC3F0"/>
+<path d="M0 350h1600" stroke="#fff" stroke-width="4" stroke-dasharray="30 20"/>
+<g fill="#fff"><path d="M180 338l20 12-20 12zM780 338l20 12-20 12zM1380 338l20 12-20 12z"/></g>
+<rect y="380" width="1600" height="200" fill="#4A5160"/>
+<path d="M0 480h1600" stroke="#fff" stroke-width="6" stroke-dasharray="50 40"/>
+<g fill="#fff"><rect x="700" y="380" width="30" height="200"/><rect x="760" y="380" width="30" height="200"/><rect x="820" y="380" width="30" height="200"/><rect x="880" y="380" width="30" height="200"/></g>
+<rect y="580" width="1600" height="40" fill="#B5E0C2"/><rect y="620" width="1600" height="90" fill="#F4F6F8"/>
+<g fill="#5FAF7A" stroke="#3E8A57" stroke-width="3"><circle cx="270" cy="600" r="30"/><circle cx="570" cy="600" r="30"/><circle cx="1170" cy="600" r="30"/><circle cx="1470" cy="600" r="30"/></g>
+<g fill="#123B70"><rect x="360" y="660" width="90" height="12" rx="3"/><rect x="1260" y="660" width="90" height="12" rx="3"/></g>
+<rect y="710" width="1600" height="190" fill="#DCE9F7"/>
+<text x="800" y="830" fill="#123B70" font-family="Poppins, sans-serif" font-size="34" font-weight="600" text-anchor="middle" letter-spacing="4">PROJET RÉAMÉNAGÉ</text></svg>

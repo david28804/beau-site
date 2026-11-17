@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" fill="none">
+  <rect x="20" y="20" width="600" height="480" rx="22" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".25"/>
+  <g stroke="#fff" stroke-opacity=".08">
+    <path d="M20 80h600M20 140h600M20 200h600M20 260h600M20 320h600M20 380h600M20 440h600"/>
+    <path d="M80 20v480M140 20v480M200 20v480M260 20v480M320 20v480M380 20v480M440 20v480M500 20v480M560 20v480"/>
+  </g>
+  <!-- sol -->
+  <path d="M60 420h520" stroke="#9CC3F0" stroke-width="2"/>
+  <!-- bâtiments -->
+  <g stroke="#fff" stroke-width="2">
+    <rect x="80" y="300" width="70" height="120" fill="#2563A6" fill-opacity=".45"/>
+    <rect x="160" y="200" width="90" height="220" fill="#EAF3FC" fill-opacity=".14"/>
+    <rect x="262" y="140" width="80" height="280" fill="#2563A6" fill-opacity=".55"/>
+    <rect x="354" y="230" width="100" height="190" fill="#EAF3FC" fill-opacity=".14"/>
+    <rect x="466" y="280" width="90" height="140" fill="#2563A6" fill-opacity=".45"/>
+    <path d="M262 140l40-40 40 40" fill="#9CC3F0" fill-opacity=".3"/>
+  </g>
+  <g stroke="#fff" stroke-opacity=".7" stroke-width="1.5">
+    <path d="M95 320h40M95 345h40M95 370h40M95 395h40"/>
+    <path d="M178 225h20M212 225h20M178 255h20M212 255h20M178 285h20M212 285h20M178 315h20M212 315h20M178 345h20M212 345h20M178 375h20M212 375h20"/>
+    <path d="M280 170h44M280 200h44M280 230h44M280 260h44M280 290h44M280 320h44M280 350h44M280 380h44"/>
+    <path d="M372 255h64M372 285h64M372 315h64M372 345h64M372 375h64"/>
+    <path d="M484 305h54M484 335h54M484 365h54M484 395h54"/>
+  </g>
+  <!-- arbres -->
+  <g fill="#9CC3F0" fill-opacity=".5" stroke="#fff" stroke-width="1.5">
+    <circle cx="60" cy="400" r="14"/><circle cx="580" cy="398" r="16"/><circle cx="458" cy="404" r="10"/>
+  </g>
+  <!-- cotes -->
+  <g stroke="#9CC3F0" stroke-width="1.5">
+    <path d="M80 450h476M80 444v12M556 444v12"/>
+    <path d="M600 140v280M594 140h12M594 420h12"/>
+  </g>
+  <text x="318" y="476" fill="#9CC3F0" font-family="Inter, sans-serif" font-size="13" text-anchor="middle">476,00 m</text>
+  <text x="614" y="285" fill="#9CC3F0" font-family="Inter, sans-serif" font-size="13" transform="rotate(90 614 285)" text-anchor="middle">R+12</text>
+  <!-- compas -->
+  <g transform="translate(560 80)" stroke="#fff" stroke-width="1.5">
+    <circle r="22" stroke-opacity=".6"/>
+    <path d="M0-16l6 16H-6z" fill="#fff"/>
+    <text y="-28" fill="#fff" font-family="Poppins, sans-serif" font-size="12" text-anchor="middle" stroke="none">N</text>
+  </g>
+  <text x="56" y="70" fill="#fff" fill-opacity=".8" font-family="Poppins, sans-serif" font-size="14" font-weight="600" letter-spacing="2">PLAN D'AMÉNAGEMENT — ÉCH. 1/500</text>
+</svg>

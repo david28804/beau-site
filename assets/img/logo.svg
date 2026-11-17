@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo B.E.A.U">
+  <rect width="64" height="64" rx="14" fill="#123B70"/>
+  <path d="M0 46h64M18 0v64" stroke="#2563A6" stroke-width="1"/>
+  <rect x="12" y="30" width="10" height="22" fill="#fff"/>
+  <rect x="25" y="18" width="12" height="34" fill="#9CC3F0"/>
+  <rect x="40" y="25" width="12" height="27" fill="#fff"/>
+  <path d="M28 23h6M28 28h6M28 33h6M28 38h6M43 30h6M43 35h6M43 40h6M15 35h4M15 40h4" stroke="#123B70" stroke-width="2"/>
+  <path d="M8 52h48" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="50" cy="13" r="4" fill="none" stroke="#fff" stroke-width="2"/>
+</svg>
