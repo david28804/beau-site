@@ -41,20 +41,22 @@ Les couleurs sont définies une seule fois, en variables CSS au début de `asset
 
 ## Contenus à remplacer avant la mise en ligne
 
-Les textes de démonstration doivent être validés ou remplacés par l'entreprise :
+Depuis le 18/11/2026, les contenus viennent des deux présentations officielles du BEAU : « Conférence Nationale sur les infrastructures » (mars 2026) et « Présentation Ministre — État des lieux des activités » (août 2025). Les informations internes de la seconde (faiblesses, salaires, état des locaux, projet de nouveau siège, contrat et facture de travaux) ont volontairement été écartées.
 
-1. **Coordonnées** (adresse, téléphone, e-mail, horaires, liens réseaux sociaux) : dans l'en-tête, le pied de page et `contact.html` de chaque page. Une recherche-remplacement sur `+000 00 00 00 00`, `contact@beau-urbanisme.com` et `Avenue de l'Urbanisme` suffit.
-2. **Chiffres clés** (15+ ans, 120+ projets…) : `index.html` et `a-propos.html`.
-3. **Historique et équipe dirigeante** : `a-propos.html`.
-4. **Réalisations** : les 8 projets de `realisations.html` sont fictifs. Chaque carte porte ses informations dans des attributs `data-*` (titre, lieu, année, domaine, maître d'ouvrage, description), lus par la fenêtre de détail.
-5. **Partenaires** : noms et logos de `partenaires.html` et le bandeau de l'accueil. Il faut l'accord des partenaires avant de publier leur logo.
-6. **Carte** : `contact.html`. L'iframe OpenStreetMap pointe sur des coordonnées provisoires. Pour la remplacer : openstreetmap.org, puis *Partager*, puis *HTML*.
-7. **Mentions légales** : compléter les champs entre crochets (RCCM, hébergeur, directeur de publication…).
+Ce qui manque encore, car absent des présentations :
+
+1. **Téléphone et e-mail** : `+243 00 000 00 00` et `contact@beau-urbanisme.com` sont provisoires (en-tête, pied de page, contact, mentions légales).
+2. **Adresse exacte du siège** : seul « Kinshasa – Limete » est connu. La carte de `contact.html` est centrée sur la commune de Limete. Pour mettre la position exacte : openstreetmap.org, puis *Partager*, puis *HTML*.
+3. **Réseaux sociaux** : les liens pointent vers `#`.
+4. **Logo en haute définition** : la seule version disponible fait 195 × 71 px (`assets/img/logo-beau.png`). Un fichier SVG ou PNG plus grand rendra le logo plus net.
+5. **Direction** : noms et fonctions des responsables, si le BEAU veut les publier.
+6. **Bailleurs de fonds** (`partenaires.html`) : AFD, BAD, JICA, KOICA, PNUD, UE, ONU-Habitat et USAID figurent dans la présentation, sur la diapositive « Financements ». Leurs logos ne sont pas publiés. À confirmer par le BEAU avant de les ajouter.
+7. **Mentions légales** : directeur de la publication et adresse complète.
 8. **Nom de domaine** : remplacer `www.beau-urbanisme.com` dans les balises `canonical`, `sitemap.xml`, `robots.txt` et `contact.php`.
 
 ### Remplacer les illustrations par des photos
 
-Les visuels actuels sont des illustrations SVG au style « plan technique ». Pour mettre des photos :
+Les photos et plans sont dans `assets/img/photos/`, extraits des présentations, redimensionnés et compressés. Pour en ajouter :
 - les exporter en **WebP** (ou JPEG), d'environ 1600 px de large et de moins de 300 Ko ;
 - les placer dans `assets/img/` et modifier l'attribut `src` (et `data-img` pour les réalisations) ;
 - toujours renseigner un texte `alt` descriptif (accessibilité et référencement).

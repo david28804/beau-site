@@ -226,5 +226,5 @@
   }
 
   /* ---------- Année du pied de page ---------- */
-  $$("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
+  $$("[data-current-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
 })();
