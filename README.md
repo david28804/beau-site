@@ -45,7 +45,7 @@ Depuis le 18/11/2026, les contenus viennent des deux présentations officielles 
 
 Ce qui manque encore, car absent des présentations :
 
-1. **Téléphone et e-mail** : `+243 00 000 00 00` et `contact@beau-urbanisme.com` sont provisoires (en-tête, pied de page, contact, mentions légales).
+1. **Téléphone et e-mail** : le téléphone a été retiré du site en attendant le vrai numéro (à remettre dans l'en-tête, le pied de page, la page contact et les mentions légales). `contact@beau-urbanisme.com` est provisoire.
 2. **Adresse exacte du siège** : seul « Kinshasa – Limete » est connu. La carte de `contact.html` est centrée sur la commune de Limete. Pour mettre la position exacte : openstreetmap.org, puis *Partager*, puis *HTML*.
 3. **Réseaux sociaux** : les liens pointent vers `#`.
 4. **Logo en haute définition** : la seule version disponible fait 195 × 71 px (`assets/img/logo-beau.png`). Un fichier SVG ou PNG plus grand rendra le logo plus net.
