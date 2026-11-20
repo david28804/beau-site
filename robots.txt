@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /contact.php
 
 Sitemap: https://www.beau-urbanisme.com/sitemap.xml

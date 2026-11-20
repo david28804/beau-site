@@ -149,10 +149,11 @@
   });
 
   /* ---------- Formulaire de contact ---------- */
+  // Adresse qui reçoit les messages du formulaire (à remplacer par l'adresse officielle).
+  const CONTACT_EMAIL = "contact@beau-urbanisme.com";
   const form = $("#contact-form");
   if (form) {
     const status = $(".form-status", form);
-    const submitBtn = $("button[type=submit]", form);
     const icons = {
       ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>',
       err: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>',
@@ -190,7 +191,7 @@
       status.scrollIntoView({ behavior: "smooth", block: "center" });
     };
 
-    form.addEventListener("submit", async (e) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
       const fieldsToCheck = $$("input, select, textarea", form).filter((el) => rules[el.name]);
       const allOk = fieldsToCheck.map(validateField).every(Boolean);
@@ -200,28 +201,30 @@
         return;
       }
 
-      const label = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Envoi en cours…";
-      try {
-        const res = await fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" },
-        });
-        const data = await res.json().catch(() => ({}));
-        if (res.ok && data.success) {
-          form.reset();
-          showStatus("success", "<strong>Merci, votre demande a bien été envoyée.</strong><br>Notre équipe vous répondra dans les meilleurs délais (sous 48 h ouvrées).");
-        } else {
-          showStatus("error", data.message || "Une erreur est survenue. Veuillez réessayer ou nous écrire directement à <a href=\"mailto:contact@beau-urbanisme.com\">contact@beau-urbanisme.com</a>.");
-        }
-      } catch (err) {
-        showStatus("error", "Impossible de joindre le serveur pour le moment. Veuillez réessayer ou nous écrire à <a href=\"mailto:contact@beau-urbanisme.com\">contact@beau-urbanisme.com</a>.");
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = label;
-      }
+      // Champ piège : rempli uniquement par les robots.
+      const hp = $("#website", form);
+      if (hp && hp.value) return;
+
+      // Prépare un e-mail dans la messagerie du visiteur (aucun serveur nécessaire).
+      const val = (name) => (form.elements[name] ? form.elements[name].value.trim() : "");
+      const subject = "[Site BEAU] " + val("sujet") + " — " + val("nom");
+      const body = [
+        "Nom et prénom : " + val("nom"),
+        "E-mail : " + val("email"),
+        "Téléphone : " + (val("telephone") || "non renseigné"),
+        "Sujet : " + val("sujet"),
+        "",
+        val("message"),
+      ].join("\r\n");
+      const mailto = "mailto:" + CONTACT_EMAIL +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailto;
+      showStatus("success",
+        "<strong>Votre messagerie va s'ouvrir avec votre message déjà rempli.</strong><br>" +
+        "Il ne vous reste qu'à cliquer sur « Envoyer ». Si rien ne s'ouvre, écrivez-nous directement à " +
+        "<a href=\"mailto:" + CONTACT_EMAIL + "\">" + CONTACT_EMAIL + "</a>.");
     });
   }
 

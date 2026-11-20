@@ -86,7 +86,7 @@
         <div class="form-card reveal" data-delay="1">
           <h2 style="font-size:1.5rem">Envoyez-nous un message</h2>
           <p style="color:var(--gray-500);font-size:.93rem">Les champs marqués d'un astérisque (*) sont obligatoires.</p>
-          <form id="contact-form" action="contact.php" method="post" novalidate>
+          <form id="contact-form" action="#" novalidate>
             <div class="form-grid">
               <div class="field">
                 <label for="nom">Nom et prénom *</label>
@@ -128,7 +128,6 @@
                 <label for="website">Ne pas remplir</label>
                 <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
               </div>
-              <input type="hidden" name="ts" id="ts" value="">
               <div class="field field--full">
                 <label class="consent"><input type="checkbox" name="consentement" value="1" required> <span>J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="politique-confidentialite.html">politique de confidentialité</a>. *</span></label>
                 <span class="field__error" aria-live="polite"></span>
@@ -139,7 +138,6 @@
             </div>
             <div class="form-status" role="status" aria-live="polite"></div>
           </form>
-          <script>document.getElementById("ts").value = Math.floor(Date.now() / 1000);</script>
         </div>
       </div>
     </section>

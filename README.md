@@ -1,7 +1,7 @@
 # Site web B.E.A.U — Documentation technique
 
 Site institutionnel du **Bureau d'Étude d'Aménagement et d'Urbanisme**.
-Technologies : HTML5, CSS3, JavaScript (sans framework) et PHP 8 pour le formulaire de contact.
+Technologies : HTML5, CSS3 et JavaScript (sans framework). Aucun serveur n'est nécessaire.
 
 ## Arborescence
 
@@ -16,7 +16,6 @@ BEAU_SITE/
 ├── mentions-legales.html
 ├── politique-confidentialite.html
 ├── 404.html                        Page d'erreur
-├── contact.php                     Traitement du formulaire (e-mail)
 ├── sitemap.xml / robots.txt        Référencement
 ├── .htaccess                       HTTPS, sécurité, cache (serveur Apache)
 └── assets/
@@ -52,7 +51,7 @@ Ce qui manque encore, car absent des présentations :
 5. **Direction** : noms et fonctions des responsables, si le BEAU veut les publier.
 6. **Bailleurs de fonds** (`partenaires.html`) : AFD, BAD, JICA, KOICA, PNUD, UE, ONU-Habitat et USAID figurent dans la présentation, sur la diapositive « Financements ». Leurs logos ne sont pas publiés. À confirmer par le BEAU avant de les ajouter.
 7. **Mentions légales** : directeur de la publication et adresse complète.
-8. **Nom de domaine** : remplacer `www.beau-urbanisme.com` dans les balises `canonical`, `sitemap.xml`, `robots.txt` et `contact.php`.
+8. **Nom de domaine** : remplacer `www.beau-urbanisme.com` dans les balises `canonical`, `sitemap.xml`, `robots.txt` et la constante `CONTACT_EMAIL` de `assets/js/main.js`.
 
 ### Remplacer les illustrations par des photos
 
@@ -63,25 +62,22 @@ Les photos et plans sont dans `assets/img/photos/`, extraits des présentations,
 
 ## Formulaire de contact
 
-`contact.php` reçoit la demande par AJAX et renvoie du JSON. Sans JavaScript, il affiche une page HTML.
+Le formulaire fonctionne entièrement en JavaScript (`assets/js/main.js`), sans PHP ni serveur.
 
-- Configuration en haut du fichier : `DESTINATAIRE`, `EXPEDITEUR`, limites anti-spam.
-- Protections : champ piège (honeypot), délai minimum de remplissage, limite de 5 envois par heure et par IP, validation côté serveur, protection contre l'injection d'en-têtes, e-mail en texte brut.
-- Un accusé de réception est envoyé au visiteur (`ENVOYER_ACCUSE`).
-- Prérequis : **PHP 8 ou plus** avec la fonction `mail()` active chez l'hébergeur. L'`EXPEDITEUR` doit appartenir au domaine du site (configurer SPF/DKIM). Si `mail()` n'est pas fiable chez l'hébergeur, passer par PHPMailer et un compte SMTP.
+- Les champs sont vérifiés dans le navigateur (nom, e-mail, sujet, message, consentement).
+- À l'envoi, la messagerie du visiteur s'ouvre avec un e-mail déjà rempli : destinataire, objet « [Site BEAU] sujet — nom », coordonnées et message. Le visiteur n'a plus qu'à cliquer sur « Envoyer ».
+- L'adresse de réception se règle avec la constante `CONTACT_EMAIL`, au début de la partie « Formulaire de contact » de `main.js`.
+- Un champ piège (honeypot) bloque les robots les plus simples.
 
-> Ouvert directement depuis le disque (`file://`), le formulaire ne peut pas envoyer d'e-mail et affiche un message d'erreur. C'est normal : il faut un serveur PHP.
+Limite : le visiteur doit avoir une messagerie configurée sur son appareil (Outlook, Gmail sur téléphone, etc.). Pour un envoi direct sans messagerie, il faudra brancher un service comme Web3Forms ou EmailJS.
 
 ## Tester en local
 
+Ouvrir `index.html` dans le navigateur, ou lancer un petit serveur :
+
 ```bash
-# Avec PHP installé (formulaire fonctionnel, mais sans envoi réel de mail)
-php -S localhost:8000
-# Sans PHP (consultation seule)
 npx serve .
 ```
-
-Puis ouvrir http://localhost:8000.
 
 ## Mise en ligne
 
@@ -89,7 +85,7 @@ Puis ouvrir http://localhost:8000.
 2. Activer le certificat SSL (Let's Encrypt). Le `.htaccess` redirige ensuite vers HTTPS.
 3. Configurer le nom de domaine (DNS A/CNAME vers l'hébergeur).
 4. Déclarer le site et `sitemap.xml` dans Google Search Console.
-5. Tester le formulaire en conditions réelles.
+5. Tester le formulaire (ouverture de la messagerie avec le message prérempli).
 
 ## Fonctionnalités
 
@@ -104,6 +100,5 @@ Puis ouvrir http://localhost:8000.
 
 ## Maintenance
 
-- Mettre à jour PHP chez l'hébergeur.
 - Sauvegarder régulièrement le dossier du site.
 - Ajouter les nouvelles réalisations en dupliquant un bloc `project-item` dans `realisations.html`.
